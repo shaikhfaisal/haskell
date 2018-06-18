@@ -2,6 +2,9 @@ module Geometry (
  areaOfCircle,
  areaOfSquare,
  areaOfRectangle,
+ volumeOfSphere,
+ volumeOfCuboid,
+ volumeOfCube,
 ) where
 
 
