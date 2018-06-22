@@ -59,3 +59,20 @@ numLongChains = length (filter isLong (map chain [1..10]))
 sum' :: (Num a) => [a] -> a
 sum' xs = foldl1 (\x y -> x * y ) xs
 
+
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float
+
+surfaceArea :: Shape -> Float
+surfaceArea (Circle _ _ r)          = 2 * pi * r 
+surfaceArea (Rectangle x1 y1 x2 y2) = abs(x1 - x2) * abs(y1 - y2)
+
+data Vector a = Vector a a a deriving (Show)
+
+addVectors :: (Num a) => Vector a -> Vector a -> Vector a
+addVectors (Vector x1 y1 z1) (Vector x2 y2 z2)  = Vector (x1+x2) (y1+y2) (z1+z2)
+
+data Person = Person {
+                        firstName :: String,
+                        lastName :: String,
+                        age :: Int
+                     } deriving (Eq, Show)
